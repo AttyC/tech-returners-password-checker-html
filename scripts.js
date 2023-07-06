@@ -1,11 +1,11 @@
-const input = document.getElementById('password');
+const passwordInput = document.getElementById('password');
 const progressBar = document.getElementById('progress-bar');
+const progressText = document.createElement('p');
 
 const handleInput = () => {
-  let passwordLength = input.value.length + 1;
+  let passwordLength = passwordInput.value.length + 1;
   validateLength(passwordLength);
-  passwordLength *= 5;
-  progressBar.setAttribute('value', passwordLength);
+  progressBar.setAttribute('value', (passwordLength *= 5));
 };
 
 const validateLength = (passwordLength) => {
