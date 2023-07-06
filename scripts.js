@@ -5,12 +5,18 @@ const progressText = document.createElement('p');
 const handleInput = () => {
   let passwordLength = passwordInput.value.length + 1;
   validateLength(passwordLength);
-  progressBar.setAttribute('value', (passwordLength *= 5));
 };
 
 const validateLength = (passwordLength) => {
   const progressBarColor = passwordLength < 8 ? 'red' : 'blue';
-  progressBar.style.setProperty('--progressColor', progressBarColor);
+  updateUI(progressBarColor, passwordLength);
 };
 
-input.addEventListener('keydown', handleInput);
+const updateUI = (progressBarColor, passwordLength) => {
+  progressBar.style.setProperty('--progressColor', progressBarColor);
+  progressBar.setAttribute('value', (passwordLength *= 5));
+  progressText.textContent = passwordLength + '%';
+  document.body.append(progressText);
+};
+
+passwordInput.addEventListener('keydown', handleInput);
