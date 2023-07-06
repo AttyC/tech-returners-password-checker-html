@@ -21,12 +21,13 @@ const validateLength = (passwordLength) => {
     feedback.textContent = 'Grrrreat!';
     progressBarColor = 'green';
   }
+  passwordLength = passwordLength <= 20 ? (passwordLength *= 5) : 100;
   updateUI(progressBarColor, passwordLength);
 };
 
 const updateUI = (progressBarColor, passwordLength) => {
   progressBar.style.setProperty('--progressColor', progressBarColor);
-  progressBar.setAttribute('value', (passwordLength *= 5));
+  progressBar.setAttribute('value', passwordLength);
   progressText.textContent = passwordLength + '%';
 
   section.append(progressText);
