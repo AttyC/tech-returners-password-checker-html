@@ -1,6 +1,8 @@
 const input = document.getElementById('password');
+const progressBar = document.getElementById('progress-bar');
 
 const handleInput = () => {
-  console.log(input.value.length + 1);
+  const passwordLength = input.value.length + 1;
+  progressBar.setAttribute('value', passwordLength);
 };
 input.addEventListener('keydown', handleInput);
