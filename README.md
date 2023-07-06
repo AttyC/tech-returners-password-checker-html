@@ -1,5 +1,5 @@
 # tech-returners-password-checker-html
-####🗺 The Task
+#### 🗺 The Task
 Create a HTML/CSS/JS project which allows users to enter a password and check its strength. The page should contain a heading (How good is your password?), an input field, and a progress bar.
 Below are a set of User Requirements for your project to meet.
 This task is about DOM manipulation but get as creative as you like!
